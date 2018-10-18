@@ -1,0 +1,42 @@
+Q2.
+	ackermann(3, 6)
+
+	Procedure Calls:		172233
+	Maximum Window Depth:		511
+
+	- With 6 Register Windows
+		Overflows:		84883
+		Underflows:		84885
+
+	- With 8 Register Windows
+		Overflows:		83909
+		Underflows:		83911
+
+	- With 16 Register Windows
+		Overflows:		80140
+		Underflows:		80142
+
+
+Q3
+	----------------------------------------------------------------------------
+
+	Processor: Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz, 2401 Mhz, 2 Core(s), 4 Logical Processor(s)
+	100000 calls:	50051ms
+	1 call:		approx. 0.501ms
+
+	----------------------------------------------------------------------------
+
+	Initially I tried to time one call of ackermann(3, 6), but kept getting
+	0ms as a result. So next I tried calling the function 100000 times in a
+	while loop and dividing the total time elapsed by 100000 s.t.
+	I have some average time for each call.
+	Still I was getting 0, but after discussing it with friends I found the
+	compiler was optimising away the 'unnecessary' ackermann() calls. I read
+	that the way to prevent this was to pass a 'volatile' variable in,
+	effectively telling the compiler to not optimise the code 'in case' the
+	value is changed somehow by a different thread etc.
+	I'm sure this method is not the most accurate, as incrementing 'i' in the
+	while loop takes (although very little) at least a bit of processor time,
+	and so would the comparison at the beginning of each iteration.
+	I've also just realised I was listening to music and running Chrome when
+	I got these results, which would further slow down execution.
