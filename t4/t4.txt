@@ -1,0 +1,23 @@
+Q1.
+i)	add	r1, r1, r2
+	nop	 -   -   -
+	add	r3, r1, r3
+
+ii)	addi	r1, r1, 03
+ 	addi	r2, r2, 03
+	add	r3, r1, r2
+
+iii)	addi	r1, r1, 05
+	st	r1, r0, 00
+
+iv)	addi	r0, r0, 05
+
+v)	ld	r0, r1, 00
+
+vi)	addi	r0, r0, 01
+	beqz	 -  r0, 08
+
+vii)	jr	 -   -  r0
+
+viii)	j		04
+	j		FC
