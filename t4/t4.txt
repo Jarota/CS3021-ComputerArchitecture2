@@ -1,3 +1,7 @@
+	T4 Answers
+
+----------------------------------------
+
 Q1.
 i)	add	r1, r1, r2
 	nop	 -   -   -
@@ -21,3 +25,28 @@ vii)	jr	 -   -  r0
 
 viii)	j		04
 	j		FC
+
+----------------------------------------
+
+Q2.
+i)	r1:		0x15
+	clk cycles:	10
+
+ii)	r1:		0x15
+	clk cycles:	18
+
+iii)	r1:		0x06
+	clk cycles:	10
+
+With ALU forwarding on, there are no stalls
+needed for this program, hence the number of
+clock cycles stays at 10, however r1 still has
+the 'correct' result at the end (0x15). With
+no ALU forwarding, but with CPU data dependency
+interlocks, the same 'correct' result is gotten,
+but stalls were needed in order to have the
+right values in r1 and r2 at each stage. Without
+ALU forwarding or interlocks, the program only
+takes 10 clock cycles again, but a different
+result is in r1 at the end, because the data
+dependencies were essentially ignored.
