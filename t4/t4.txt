@@ -50,3 +50,27 @@ ALU forwarding or interlocks, the program only
 takes 10 clock cycles again, but a different
 result is in r1 at the end, because the data
 dependencies were essentially ignored.
+
+----------------------------------------
+
+Q3.
+i)
+39 instructions are executed and 51 clock cycles
+pass; this is because 4 clock cycles pass before
+the first instruction has finished executing (in
+a five stage pipeline) and 4 clock cycles pass
+due to stalls when branching and 4 cycles pass
+due to stalls when shifting r2. 39 + 4 + 4 + 4 = 51
+
+ii)
+This time 53 clock cycles are needed to execute
+the program, because without the branch prediction
+the program stalls *every* time there is a branch.
+This means when a branch comes up a for a second
+time, the stall is not avoided by using the BTB,
+and so more clock cycles are needed. 53 > 51
+
+iii)
+Execution time decreases from 51 to 47 clock cycles,
+because it no longer needs to stall before shifting
+r2, and so you save the 4 extra clock cycles.
